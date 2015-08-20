@@ -1,0 +1,13 @@
+{
+	"name": "Ordförande",
+	"children": [
+		{ 
+			"name": "Vice Ordförande",
+			"children": [
+				{ "name": "Socialt Ansvarig" },
+				{ "name": "Programansvarig Student" },
+				{ "name": "Näringslivsansvarig" }
+			]
+		}
+	]
+}

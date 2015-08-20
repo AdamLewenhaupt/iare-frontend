@@ -21,8 +21,9 @@ createIcons = (list) ->
 		createIcon icon.name, icon.href
 
 $ -> 
-	createIcons [
-		{name: "iare", href: "/" }, 
-		{name: "cluster", href: "/cluster.html"}, 
-		{name: "cal", href: "/cal.html" },
-		{name: "news", href: "/news.html" }]
+	if loc != "d3testing.html"
+		createIcons [
+			{name: "iare", href: "/" }, 
+			{name: "cluster", href: "/cluster.html"}, 
+			{name: "cal", href: "/cal.html" },
+			{name: "news", href: "/news.html" }]
