@@ -4,32 +4,57 @@ var createIcon, createIcons, dimFactory, elbow, lightFactory, loc;
 loc = void 0;
 
 elbow = function(d, i) {
-  "M" + d.source.y + "," + d.source.x;
-  return +"H" + d.target.y + "V" + d.target.x;
+  return "M" + d.source.x + "," + d.source.y + "V" + ((d.target.y + d.source.y) / 2) + "H" + d.target.x + "V" + d.target.y;
 };
 
 $(function() {
-  var parts, svg, tree, url;
+  var height, i, margin, parts, svg, tree, url, width;
   url = window.parent.location.href;
   parts = url.split('/');
   loc = parts[parts.length - 1];
   if (loc === "d3testing.html") {
-    tree = d3.layout.tree().separation(function(a, b) {
-      return 1;
-    }).children(function(d) {
-      return d.children;
-    }).size(960, 500);
-    svg = d3.select("#paper").attr("width", 960).attr("height", 500).append("g");
+    margin = {
+      top: 80,
+      right: 120,
+      bottom: 20,
+      left: 400
+    };
+    width = 960 - margin.left - margin.right;
+    height = 500 - margin.top - margin.bottom;
+    i = 0;
+    tree = d3.layout.tree().size([height, width]).nodeSize([300]);
+    svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append('g').attr('transform', "translate(" + margin.left + ", " + margin.top + ")");
     return d3.json("tree.json", function(err, json) {
-      var link, node, nodes;
-      if (err) {
-        throw err;
-      }
-      nodes = tree.nodes(json);
-      link = svg.selectAll('.link').data(tree.links(nodes)).enter().append("path").attr('class', 'link').attr('d', elbow);
-      return node = svg.selectAll('.node').data(nodes).enter().append('g').attr('class', 'node').attr("transform", function(d) {
-        return "translate(" + d.y + "," + d.x + ")";
-      });
+      var update;
+      update = function(source) {
+        var link, links, node, nodeEnter, nodes;
+        nodes = tree.nodes(json).reverse();
+        links = tree.links(nodes);
+        nodes.forEach(function(d) {
+          d.y = d.depth * 100;
+        });
+        node = svg.selectAll('g.node').data(nodes, function(d) {
+          return d.id || (d.id = ++i);
+        });
+        nodeEnter = node.enter().append('g').attr('class', 'node').attr('transform', function(d) {
+          return 'translate(' + d.x + ',' + d.y + ')';
+        });
+        nodeEnter.append('circle').attr('r', 30).style('fill', '#fff');
+        nodeEnter.append('text').attr('y', function(d) {
+          if (d.children || d._children) {
+            return 0;
+          } else {
+            return 0;
+          }
+        }).attr('dx', '40px').attr('text-anchor', 'left').text(function(d) {
+          return d.name;
+        }).style('fill-opacity', 1);
+        link = svg.selectAll('path.link').data(links, function(d) {
+          return d.target.id;
+        });
+        link.enter().insert('path', 'g').attr('class', 'link').attr('d', elbow);
+      };
+      return update(json);
     });
   }
 });
