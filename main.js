@@ -32,10 +32,10 @@ createIcon = function(name, href) {
 };
 
 createIcons = function(list) {
-  var icon, j, len, results;
+  var icon, k, len, results;
   results = [];
-  for (j = 0, len = list.length; j < len; j++) {
-    icon = list[j];
+  for (k = 0, len = list.length; k < len; k++) {
+    icon = list[k];
     results.push(createIcon(icon.name, icon.href));
   }
   return results;
@@ -76,27 +76,38 @@ $(function() {
   loc = parts[parts.length - 1];
   if (loc === "d3testing.html") {
     margin = {
-      top: 80,
+      top: 40,
       right: 120,
       bottom: 20,
-      left: 400
+      left: 600
     };
     width = 960 - margin.left - margin.right;
     height = 500 - margin.top - margin.bottom;
     i = 0;
-    tree = d3.layout.tree().size([height, width]).nodeSize([300]);
+    tree = d3.layout.tree().size([height, width]).nodeSize([100]);
     svg = d3.select("#tree").append('g').attr('transform', "translate(" + margin.left + ", " + margin.top + ")");
     return d3.json("tree.json", function(err, json) {
       var update;
       update = function(source) {
-        var link, links, node, nodeEnter, nodes;
+        var currentDepth, j, link, links, node, nodeEnter, nodes;
         nodes = tree.nodes(json).reverse();
         links = tree.links(nodes);
+        j = 0;
+        currentDepth = 0;
         nodes.forEach(function(d) {
-          if (d.children === void 0) {
-            console.log(d);
+          var y;
+          if (currentDepth < d.depth) {
+            j = 0;
           }
-          return d.y = d.depth * 100;
+          currentDepth = d.depth;
+          j++;
+          console.log(d.depth);
+          y = d.depth * 100;
+          if (d.children === void 0) {
+            d.x = d.parent.x;
+            y = y - 50 + j * 50;
+          }
+          return d.y = y;
         });
         node = svg.selectAll('g.node').data(nodes, function(d) {
           return d.id || (d.id = ++i);

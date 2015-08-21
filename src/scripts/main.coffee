@@ -1,69 +1,80 @@
 
 elbow = (d, i) ->
-	# "M#{d.source.x},#{d.source.y}H#{d.target.x}V#{d.target.y}"
-	"M#{d.source.x},#{d.source.y}V#{(d.target.y + d.source.y) / 2}H#{d.target.x}V#{d.target.y}"
+    # "M#{d.source.x},#{d.source.y}H#{d.target.x}V#{d.target.y}"
+    "M#{d.source.x},#{d.source.y}V#{(d.target.y + d.source.y) / 2}H#{d.target.x}V#{d.target.y}"
 
 $ ->
 
-	url = window.parent.location.href
-	parts = url.split '/'
-	loc = parts[parts.length-1]
-	
-	if loc == "d3testing.html"
+    url = window.parent.location.href
+    parts = url.split '/'
+    loc = parts[parts.length-1]
+    
+    if loc == "d3testing.html"
 
-		margin = {
-			top: 80,
-			right: 120,
-			bottom: 20,
-			left: 400
-		}
+        margin = {
+            top: 40,
+            right: 120,
+            bottom: 20,
+            left: 600
+        }
 
-		width = 960 - margin.left - margin.right
-		height = 500 - margin.top - margin.bottom
+        width = 960 - margin.left - margin.right
+        height = 500 - margin.top - margin.bottom
 
-		i = 0
+        i = 0
 
-		tree = d3.layout.tree()
-			.size([height, width])
-			.nodeSize([300])
+        tree = d3.layout.tree()
+            .size([height, width])
+            .nodeSize([100])
 
 
-		svg = d3.select("#tree")
-				.append 'g'
-			.attr 'transform', "translate(#{margin.left}, #{margin.top})"
+        svg = d3.select("#tree")
+                .append 'g'
+            .attr 'transform', "translate(#{margin.left}, #{margin.top})"
 
-		d3.json "tree.json", (err, json) ->
+        d3.json "tree.json", (err, json) ->
 
-			update = (source) ->
-				# Compute the new tree layout.
-				nodes = tree.nodes(json).reverse()
-				links = tree.links(nodes)
-				# Normalize for fixed-depth.
-				nodes.forEach (d) ->
+            update = (source) ->
+                # Compute the new tree layout.
+                nodes = tree.nodes(json).reverse()
+                links = tree.links(nodes)
+                # Normalize for fixed-depth.
+
+                j = 0
+                currentDepth = 0
+                nodes.forEach (d) ->
+                    if currentDepth < d.depth
+                        j = 0
+                    currentDepth = d.depth
+                    j++
+                    console.log d.depth
+                    y = d.depth * 100
                     if d.children == undefined
-                        console.log d
-                    d.y = d.depth * 100
+                        d.x = d.parent.x
+                        y = y - 50 + j * 50
+
+                    d.y = y
                     
-				# Declare the nodes…
-				node = svg.selectAll('g.node').data(nodes, (d) ->
-					d.id or (d.id = ++i)
-				)
-				# Enter the nodes.
-				nodeEnter = node.enter().append('g').attr('class', 'node').attr('transform', (d) ->
-					'translate(' + d.x + ',' + d.y + ')'
-				)
-				nodeEnter.append('circle').attr('r', 30).style 'fill', '#fff'
-				nodeEnter.append('text').attr('y', (d) ->
-					if d.children or d._children then 0 else 0
-				).attr('dx', '40px').attr('text-anchor', 'left').text((d) ->
-					d.name
-				).style 'fill-opacity', 1
-				# Declare the links…
-				link = svg.selectAll('path.link').data(links, (d) ->
-					d.target.id
-				)
-				# Enter the links.
-				link.enter().insert('path', 'g').attr('class', 'link').attr 'd', elbow 
-				return
-				
-			update json
+                # Declare the nodes…
+                node = svg.selectAll('g.node').data(nodes, (d) ->
+                    d.id or (d.id = ++i)
+                )
+                # Enter the nodes.
+                nodeEnter = node.enter().append('g').attr('class', 'node').attr('transform', (d) ->
+                    'translate(' + d.x + ',' + d.y + ')'
+                )
+                nodeEnter.append('circle').attr('r', 30).style 'fill', '#fff'
+                nodeEnter.append('text').attr('y', (d) ->
+                    if d.children or d._children then 0 else 0
+                ).attr('dx', '40px').attr('text-anchor', 'left').text((d) ->
+                    d.name
+                ).style 'fill-opacity', 1
+                # Declare the links…
+                link = svg.selectAll('path.link').data(links, (d) ->
+                    d.target.id
+                )
+                # Enter the links.
+                link.enter().insert('path', 'g').attr('class', 'link').attr 'd', elbow 
+                return
+                
+            update json
