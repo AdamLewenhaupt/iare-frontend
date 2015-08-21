@@ -4,7 +4,19 @@
 		{ 
 			"name": "Vice Ordförande",
 			"children": [
-				{ "name": "Socialt Ansvarig" },
+				{ "name": "Socialt Ansvarig", "children": [
+                     { "name": "Clubmästeriet" },
+                     { "name": "Idrottsnämnden" },
+                     { "name": "Estiem" },
+                     { "name": "Internationella gruppen" },
+                     { "name": "I-Alumni" },
+                     { "name": "Portergeneral" },
+                     { "name": "Kulturnämnden" },
+                     { "name": "iSpexet" },
+                     { "name": "ÖPH" }
+
+                    
+                    ] },
 				{ "name": "Programansvarig Student" },
 				{ "name": "Näringslivsansvarig" }
 			]
