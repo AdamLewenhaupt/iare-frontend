@@ -1,7 +1,11 @@
 
 elbow = (d, i) ->
-    # "M#{d.source.x},#{d.source.y}H#{d.target.x}V#{d.target.y}"
-    "M#{d.source.x},#{d.source.y}V#{(d.target.y + d.source.y) / 2}H#{d.target.x}V#{d.target.y}"
+    if d.target.children == undefined
+        "M#{d.source.x},#{d.source.y}V#{d.target.y - 40}H#{d.target.x}V#{d.target.y}"
+
+    else
+        "M#{d.source.x},#{d.source.y}V#{(d.target.y + d.source.y) / 2}H#{d.target.x}V#{d.target.y}"
+
 
 $ ->
 
@@ -25,7 +29,7 @@ $ ->
 
         tree = d3.layout.tree()
             .size([height, width])
-            .nodeSize([100])
+            .nodeSize([60])
 
 
         svg = d3.select("#tree")
@@ -45,13 +49,18 @@ $ ->
                 nodes.forEach (d) ->
                     if currentDepth < d.depth
                         j = 0
+
                     currentDepth = d.depth
                     j++
-                    console.log d.depth
                     y = d.depth * 100
                     if d.children == undefined
-                        d.x = d.parent.x
-                        y = y - 50 + j * 50
+
+                        if d.parent.children.length < 6
+                            d.x = d.parent.x + 60
+                            y = y - 50 + j * 80
+                        else
+                            d.x = d.parent.x + Math.pow(-1, j) * 160
+                            y = y - 50 + (j / 2) * 80
 
                     d.y = y
                     
@@ -76,5 +85,5 @@ $ ->
                 # Enter the links.
                 link.enter().insert('path', 'g').attr('class', 'link').attr 'd', elbow 
                 return
-                
+                    
             update json

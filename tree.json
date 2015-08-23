@@ -18,9 +18,15 @@
                     
                     ] },
 				{ "name": "Programansvarig Student", "children": [
-                 { "name": "Studienämnden"}
+                 { "name": "Studienämnden"},
+                 { "name": "I-Academy" },
+                 { "name": "I-Case" }
                 ]},
-				{ "name": "Näringslivsansvarig" }
+				{ "name": "Näringslivsansvarig", "children": [
+                    {"name": "Närningslivsnämnden" },
+                    {"name": "Dagen-I" },
+                    {"name": "ICM" }
+                ]}
 			]
 		}
 	]
