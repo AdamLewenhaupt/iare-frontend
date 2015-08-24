@@ -18,7 +18,9 @@ elbow = function(d, i) {
 };
 
 $(function() {
-  var i, loc, margin, parts, svg, tree, url, width;
+  var i, loc, margin, parts, screenHeight, screenWidth, svg, tree, url, width;
+  screenWidth = $(window).width();
+  screenHeight = $(window).height();
   url = window.parent.location.href;
   parts = url.split('/');
   loc = parts[parts.length - 1];
@@ -27,12 +29,13 @@ $(function() {
       top: 40,
       right: 120,
       bottom: 20,
-      left: 600
+      left: screenWidth / 2
     };
-    width = 240;
+    width = screenWidth / 5;
     i = 0;
     tree = d3.layout.tree();
     svg = d3.select("#tree").append('g').attr('transform', "translate(" + margin.left + ", " + margin.top + ")");
+    svg.append("defs").append("pattern").attr("id", "test").attr("width", 60).attr("height", 60).append("image").attr("xlink:href", "/imgs/test.jpg").attr("width", 60).attr("height", 60);
     return d3.json("tree.json", function(err, json) {
       var update;
       update = function(source) {
@@ -86,12 +89,14 @@ $(function() {
           if (d.name === "CLUSTER") {
             return "none";
           } else {
-            return "#fff";
+            return "url(#test)";
           }
         }).style("stroke", function(d) {
           if (d.name === "CLUSTER") {
             return "none";
           }
+        }).on("click", function(d) {
+          return alert(d.name);
         });
         nodeEnter.append('text').attr('y', function(d) {
           if (d.children || d._children) {

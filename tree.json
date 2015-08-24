@@ -1,45 +1,45 @@
 {
-	"name": "Ordförande",
+	"name": "Ordförande", "url": "imgs/test.jpg",
 	"children": [
 		{ 
-			"name": "Vice Ordförande",
+			"name": "Vice Ordförande", "url": "imgs/test.jpg",
 			"children": [
-				{ "name": "Socialt Ansvarig", "children": [
-                     { "name": "Clubmästeriet" },
-                     { "name": "Idrottsnämnden" },
-                     { "name": "Estiem" },
-                     { "name": "Internationella gruppen" },
-                     { "name": "I-Alumni" },
-                     { "name": "Portergeneral" },
-                     { "name": "Kulturnämnden" },
-                     { "name": "iSpexet" },
-                     { "name": "ÖPH" }
+				{ "name": "Socialt Ansvarig", "url": "imgs/test.jpg", "children": [
+                     { "name": "Clubmästeriet", "url": "imgs/test.jpg" },
+                     { "name": "Idrottsnämnden", "url": "imgs/test.jpg"},
+                     { "name": "Estiem", "url": "imgs/test.jpg" },
+                     { "name": "Internationella gruppen", "url": "imgs/test.jpg"  },
+                     { "name": "I-Alumni", "url": "imgs/test.jpg"  },
+                     { "name": "Portergeneral", "url": "imgs/test.jpg"  },
+                     { "name": "Kulturnämnden", "url": "imgs/test.jpg"  },
+                     { "name": "iSpexet", "url": "imgs/test.jpg"  },
+                     { "name": "ÖPH", "url": "imgs/test.jpg"  }
 
                     
                     ] },
 
-				{ "name": "Programansvarig Student", "children": [
-                 { "name": "Studienämnden"},
-                 { "name": "I-Academy" },
-                 { "name": "I-Case" }
+				{ "name": "Programansvarig Student", "url": "imgs/test.jpg", "children": [
+                 { "name": "Studienämnden", "url": "imgs/test.jpg" },
+                 { "name": "I-Academy", "url": "imgs/test.jpg"  },
+                 { "name": "I-Case", "url": "imgs/test.jpg"  }
                 ]},
 
-				{ "name": "Näringslivsansvarig", "children": [
-                    {"name": "Närningslivsnämnden" },
-                    {"name": "Dagen-I" },
-                    {"name": "ICM" }
+				{ "name": "Näringslivsansvarig", "url": "imgs/test.jpg", "children": [
+                    {"name": "Närningslivsnämnden", "url": "imgs/test.jpg"  },
+                    {"name": "Dagen-I", "url": "imgs/test.jpg"  },
+                    {"name": "ICM", "url": "imgs/test.jpg"  }
                 ]},
 
-                { "name": "CLUSTER", "children": [
-                        { "name": "Kassör" },
-                        { "name": "Kommunikationsansvarig", "children": [
-                            {"name": "RePorter" }
+                { "name": "CLUSTER", "url": "imgs/test.jpg", "children": [
+                        { "name": "Kassör", "url": "imgs/test.jpg"  },
+                        { "name": "Kommunikationsansvarig", "url": "imgs/test.jpg", "children": [
+                            {"name": "RePorter", "url": "imgs/test.jpg"  }
                         ]},
-                        { "name": "Lokalansvarig", "children": [
-                            { "name": "SOFT" }
+                        { "name": "Lokalansvarig", "url": "imgs/test.jpg", "children": [
+                            { "name": "SOFT", "url": "imgs/test.jpg"  }
                         ]},
-                        { "name": "IT-Ansvarig", "children": [
-                            { "name": "IT-Nämnden" }
+                        { "name": "IT-Ansvarig", "url": "imgs/test.jpg", "children": [
+                            { "name": "IT-Nämnden", "url": "imgs/test.jpg"  }
                         ]}
                 ]}
 

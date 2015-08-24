@@ -15,6 +15,9 @@ elbow = (d, i) ->
 
 $ ->
 
+    screenWidth = $(window).width()
+    screenHeight = $(window).height()
+
     url = window.parent.location.href
     parts = url.split '/'
     loc = parts[parts.length-1]
@@ -25,10 +28,10 @@ $ ->
             top: 40,
             right: 120,
             bottom: 20,
-            left: 600
+            left: screenWidth / 2
         }
 
-        width = 240
+        width = screenWidth / 5
 
         i = 0
 
@@ -38,6 +41,15 @@ $ ->
         svg = d3.select("#tree")
                 .append 'g'
             .attr 'transform', "translate(#{margin.left}, #{margin.top})"
+
+        svg.append("defs").append("pattern")
+            .attr("id", "test")
+            .attr("width", 60)
+            .attr("height", 60)
+            .append("image")
+                .attr("xlink:href", "/imgs/test.jpg")
+                .attr("width",  60)
+                .attr("height", 60)
 
         d3.json "tree.json", (err, json) ->
 
@@ -93,14 +105,17 @@ $ ->
                     'translate(' + d.x + ',' + d.y + ')'
                 )
                 nodeEnter.append('circle').attr('r', 30).style 'fill', '#fff'
-                    .style "fill", (d) -> if d.name == "CLUSTER" then "none" else "#fff"
+                    .style "fill", (d) -> if d.name == "CLUSTER" then "none" else "url(#test)"
                     .style "stroke", (d) -> if d.name == "CLUSTER" then "none"
+                    .on "click", (d) -> alert(d.name)
+
                 nodeEnter.append('text').attr('y', (d) ->
                     if d.children or d._children then 0 else 0
                 ).attr('dx', '40px').attr('text-anchor', 'left').text((d) ->
                     d.name
                 ).style 'fill-opacity', (d) ->
                     if d.name == "CLUSTER" then 0 else 1
+                
                 # Declare the links…
                 link = svg.selectAll('path.link').data(links, (d) ->
                     d.target.id
