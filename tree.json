@@ -17,16 +17,32 @@
 
                     
                     ] },
+
 				{ "name": "Programansvarig Student", "children": [
                  { "name": "Studienämnden"},
                  { "name": "I-Academy" },
                  { "name": "I-Case" }
                 ]},
+
 				{ "name": "Näringslivsansvarig", "children": [
                     {"name": "Närningslivsnämnden" },
                     {"name": "Dagen-I" },
                     {"name": "ICM" }
+                ]},
+
+                { "name": "CLUSTER", "children": [
+                        { "name": "Kassör" },
+                        { "name": "Kommunikationsansvarig", "children": [
+                            {"name": "RePorter" }
+                        ]},
+                        { "name": "Lokalansvarig", "children": [
+                            { "name": "SOFT" }
+                        ]},
+                        { "name": "IT-Ansvarig", "children": [
+                            { "name": "IT-Nämnden" }
+                        ]}
                 ]}
+
 			]
 		}
 	]
