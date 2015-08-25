@@ -24,7 +24,7 @@ $(function() {
   url = window.parent.location.href;
   parts = url.split('/');
   loc = parts[parts.length - 1];
-  if (loc === "d3testing.html") {
+  if (loc === "cluster.html") {
     margin = {
       top: 40,
       right: 120,
