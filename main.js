@@ -64,11 +64,9 @@ $(function() {
             d.isSmall = true;
             d.x = d.parent.x + 60;
             y = y - 150 + (j - 1) * 120;
-            console.log("clusters");
           } else if (d.parent !== void 0 && d.parent.isSmall) {
             d.x = d.parent.x + 60;
             y = d.parent.y + 50;
-            console.log("children");
           } else if (d.children === void 0) {
             if (d.parent.children.length < 6) {
               d.x = d.parent.x + 60;
@@ -89,13 +87,13 @@ $(function() {
           return 'translate(' + d.x + ',' + d.y + ')';
         });
         nodeEnter.append('circle').attr('r', 30).style('fill', '#fff').style("fill", function(d) {
-          if (d.name === "CLUSTER") {
+          if (isCluster(d)) {
             return "none";
           } else {
             return "url(#test)";
           }
         }).style("stroke", function(d) {
-          if (d.name === "CLUSTER") {
+          if (isCluster(d)) {
             return "none";
           }
         }).on("click", function(d) {
@@ -171,21 +169,20 @@ $(function() {
   url = window.parent.location.href;
   parts = url.split('/');
   loc = parts[parts.length - 1];
-  if (loc !== "d3testing.html") {
-    return createIcons([
-      {
-        name: "iare",
-        href: "/"
-      }, {
-        name: "cluster",
-        href: "/cluster.html"
-      }, {
-        name: "cal",
-        href: "/cal.html"
-      }, {
-        name: "news",
-        href: "/news.html"
-      }
-    ]);
-  }
+  return createIcons([
+    {
+      name: "iare",
+      href: "/"
+    }, {
+      name: "cluster",
+      href: "/cluster.html"
+    }, {
+      name: "cal",
+      href: "/cal.html"
+    }
+  ]);
+});
+
+$(function() {
+  return $("#cal").fullCalendar();
 });

@@ -79,12 +79,10 @@ $ ->
                         d.isSmall = true
                         d.x = d.parent.x + 60 
                         y = y - 150 + (j - 1) * 120
-                        console.log "clusters"
 
                     else if d.parent != undefined and d.parent.isSmall
                         d.x = d.parent.x + 60
                         y = d.parent.y + 50
-                        console.log "children"
 
                     else if d.children == undefined
 
@@ -109,8 +107,8 @@ $ ->
                     'translate(' + d.x + ',' + d.y + ')'
                 )
                 nodeEnter.append('circle').attr('r', 30).style 'fill', '#fff'
-                    .style "fill", (d) -> if d.name == "CLUSTER" then "none" else "url(#test)"
-                    .style "stroke", (d) -> if d.name == "CLUSTER" then "none"
+                    .style "fill", (d) -> if isCluster d then "none" else "url(#test)"
+                    .style "stroke", (d) -> if isCluster d then "none"
                     .on "click", (d) -> alert(d.name)
 
                 nodeEnter.append('text').attr('y', (d) ->

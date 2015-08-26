@@ -26,10 +26,9 @@ $ ->
     loc = parts[parts.length-1]
 
 
-    if loc != "d3testing.html"
 
-        createIcons [
+    createIcons [
             {name: "iare", href: "/" },
             {name: "cluster", href: "/cluster.html"},
-            {name: "cal", href: "/cal.html" },
-            {name: "news", href: "/news.html" }]
+            {name: "cal", href: "/cal.html"
+        }]
