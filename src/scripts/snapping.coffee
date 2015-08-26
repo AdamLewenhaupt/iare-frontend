@@ -30,5 +30,5 @@ $ ->
     createIcons [
             {name: "iare", href: "/" },
             {name: "cluster", href: "/cluster.html"},
-            {name: "cal", href: "/cal.html"
-        }]
+            {name: "cal", href: "/cal.html" }
+        ]
