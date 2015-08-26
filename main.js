@@ -39,11 +39,12 @@ $(function() {
     return d3.json("tree.json", function(err, json) {
       var update;
       update = function(source) {
-        var currentDepth, j, link, links, node, nodeEnter, nodes;
+        var currentDepth, j, link, links, maxHeight, node, nodeEnter, nodes;
         nodes = tree.nodes(json);
         links = tree.links(nodes);
         j = 0;
         currentDepth = 0;
+        maxHeight = 0;
         nodes.forEach(function(d) {
           var y;
           if (currentDepth < d.depth) {
@@ -77,8 +78,10 @@ $(function() {
               y = y - 50 + (j / 2) * 80;
             }
           }
+          maxHeight = y > maxHeight ? y : maxHeight;
           return d.y = y;
         });
+        $("#tree").height(maxHeight + 80);
         node = svg.selectAll('g.node').data(nodes, function(d) {
           return d.id || (d.id = ++i);
         });

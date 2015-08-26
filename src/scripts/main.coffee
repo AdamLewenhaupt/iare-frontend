@@ -61,6 +61,7 @@ $ ->
 
                 j = 0
                 currentDepth = 0
+                maxHeight = 0
                 nodes.forEach (d) ->
                     if currentDepth < d.depth
                         if d.parent == undefined or not d.parent.isSmall
@@ -94,7 +95,10 @@ $ ->
                             d.x = d.parent.x + (if j % 2 == 0 then -200 else 60)
                             y = y - 50 + (j / 2) * 80
 
+                    maxHeight = if y > maxHeight then y else maxHeight
                     d.y = y
+
+                $("#tree").height(maxHeight + 80)
                     
                 # Declare the nodes…
                 node = svg.selectAll('g.node').data(nodes, (d) ->
