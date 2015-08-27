@@ -4,7 +4,7 @@
 	<title>Kalender</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href="/bower_components/fullcalendar/dist/fullcalendar.min.css" rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/main.css">
+	<link rel="stylesheet" type="text/css" href="lib/style/main.css">
 </head>
 <body>
 	<div class="navbar">
@@ -15,12 +15,24 @@
 	<div class="content">
         <div class="menu">
             <div class="menu-btn main">Översikt</div>
-            <div class="menu-btn car">OSA</div>
-            <div class="menu-btn other">Boka</div>
+            <div class="menu-btn osa">OSA</div>
+            <div class="menu-btn booking">Boka</div>
         </div>
         <div class="frame">
-            <div class="cal-wrapper"><div id="cal" /></div>
+            <div id="main" class="hidden">
+                <div class="cal-wrapper"><div id="cal"></div></div>
+            </div>
+            <div id="osa" class="" >
+                <div class="osa-list-wrapper">
+                    <h2>OSA tillgängliga</h2>
+                    <ul class="osa-list">
+                        <li>Test osa</li>
+                    </ul>
+            </div> 
+            <div id="booking" class="hidden">
+            </div>
         </div>
+    </div>
 	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/moment/moment.js"></script>
     <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
