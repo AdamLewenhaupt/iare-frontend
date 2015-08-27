@@ -14,8 +14,9 @@ body {
     width: 24vh;
     height: 24vh;
     margin: 2vh;
-    background-color: #a3a3f5;
-    box-shadow: 0px 0px 5px 2px #1919e6;
+    font-size: 3vh;
+    background-color: #1FDA9A;
+    color: #F2F2F3;
     cursor: pointer;
     border-radius: 50%;
     line-height: 24vh; }
