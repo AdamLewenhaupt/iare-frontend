@@ -1,8 +1,3 @@
-lightFactory = (icon) -> (-> icon.attr { fill: '#fff'})
-dimFactory = (icon) -> (-> icon.attr { fill: '#000'})
-
-createIcon = (name, href) ->
-    console.log "called"
     paper = Snap "##{name}-icon"
     Snap.load "/imgs/#{name}-icon.svg", (f) ->
         icon = f.select '#icon'
