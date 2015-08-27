@@ -1,2 +1,2 @@
-sass -w src/style/main.scss:main.css &
-coffee -o . -j main.js -wcb src/scripts &
+sass -w src/style/main.scss:lib/style/main.css &
+coffee -o ./lib/js -wcb src/scripts &
