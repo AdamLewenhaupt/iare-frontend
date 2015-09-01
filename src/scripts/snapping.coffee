@@ -1,3 +1,4 @@
+createIcon = (name, href) ->
     paper = Snap "##{name}-icon"
     Snap.load "/imgs/#{name}-icon.svg", (f) ->
         icon = f.select '#icon'
@@ -5,8 +6,6 @@
         paper.append icon
 
         $("##{name}-icon")
-            .hover lightFactory(icon)
-            .mouseleave dimFactory(icon)
             .click ->
                 window.location.href = href
 

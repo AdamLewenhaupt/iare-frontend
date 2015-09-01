@@ -13,7 +13,8 @@ body {
   float: left;
   width: 26vh;
   text-align: center;
-  box-shadow: 2px 2px 5px 5px #cccccc;
+  box-shadow: 2px 2px 5px 5px #a6a6a6;
+  background-color: #f2f2f2;
   padding-top: 6vh;
   padding-bottom: 6vh; }
   .menu .menu-btn {
@@ -36,19 +37,24 @@ body {
     width: calc(30% - 20px);
     height: 100%;
     float: left;
-    box-shadow: 2px 2px 5px 5px #cccccc; }
+    box-shadow: 2px 2px 5px 5px #bfbfbf;
+    background-color: #e6e6e6; }
     .frame .osa-list-wrapper .osa-list {
       height: 100%;
       overflow-y: scroll;
       list-style: none;
-      padding-left: 10px;
-      padding-right: 10px; }
+      padding: 0;
+      margin-left: 10px;
+      margin-right: 10px; }
       .frame .osa-list-wrapper .osa-list li {
         margin-bottom: 10px;
         padding: 10px;
-        background-color: #A0FB70;
-        color: #212121;
+        background-color: #2F8F74;
+        color: #E6E6E6;
         border-radius: 10px; }
+      .frame .osa-list-wrapper .osa-list li.active {
+        background-color: #58F9AB;
+        color: #595959; }
   .frame .osa-show-wrapper {
     float: right;
     width: calc(70% - 20px);
@@ -61,20 +67,30 @@ body {
     .frame .osa-show-wrapper .osa-show .osa-description {
       text-align: center; }
     .frame .osa-show-wrapper .osa-show .osa-info {
+      margin-top: 20px;
+      display: inline-block;
       width: 200px;
       background-color: #58F9AB;
       padding: 20px;
       border-radius: 20px;
       color: #212121;
       text-align: center;
-      box-shadow: 2px 2px 5px 3px #cccccc; }
+      box-shadow: 2px 2px 5px 3px #bfbfbf; }
       .frame .osa-show-wrapper .osa-show .osa-info p {
         margin-bottom: 30px;
         border-bottom: 2px solid; }
+    .frame .osa-show-wrapper .osa-show .osa-register {
+      margin-top: 20px;
+      width: calc(80% - 200px);
+      display: inline-block;
+      vertical-align: top; }
   .frame .cal-wrapper {
     overflow-y: scroll;
     height: 100%;
-    width: 100%; }
+    width: calc(100% - 40px);
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 5px 3px #bfbfbf;
+    padding: 20px; }
 
 .frame > div {
   position: absolute;
@@ -91,7 +107,7 @@ body {
 
 .link {
   fill: none;
-  stroke: #ccc;
+  stroke: #a6a6a6;
   stroke-width: 2px; }
 
 .node text {
@@ -109,11 +125,13 @@ body {
     margin: 1vh;
     margin-left: 5vw;
     margin-right: 5vw; }
-  .navbar .nav-btn.active #icon {
-    fill: #fff; }
+    .navbar .nav-btn #icon {
+      fill: #2F8F74; }
+  .navbar .nav-btn.active #icon, .navbar .nav-btn:hover #icon {
+    fill: #58F9AB; }
 
 .content {
-  background-color: #E6E6E6;
+  background-color: #d9d9d9;
   width: 100%;
   height: calc(100% - 16vh);
   box-shadow: 0px 0px 5px 5px #666666;
@@ -128,14 +146,14 @@ body {
     .content .tile .flashes {
       width: 100%; }
       .content .tile .flashes .flash {
-        background-color: white;
+        background-color: #f2f2f2;
         text-align: left;
         padding: 2%;
         padding-top: 1%;
         padding-bottom: 1%;
         width: 96%;
         border-radius: 10px;
-        box-shadow: 0px 0px 4px #b3b3b3;
+        box-shadow: 0px 0px 4px #a6a6a6;
         margin-bottom: 20px; }
         .content .tile .flashes .flash .flash-header img {
           width: 40px;
