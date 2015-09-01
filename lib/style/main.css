@@ -33,28 +33,38 @@ body {
   float: right;
   width: calc(100% - 26vh);
   height: 100%; }
-  .frame .osa-list-wrapper {
+  .frame .osa-list-wrapper, .frame .booking-list-wrapper {
     width: calc(30% - 20px);
     height: 100%;
     float: left;
     box-shadow: 2px 2px 5px 5px #bfbfbf;
     background-color: #e6e6e6; }
-    .frame .osa-list-wrapper .osa-list {
+    .frame .osa-list-wrapper .osa-list, .frame .booking-list-wrapper .osa-list {
       height: 100%;
       overflow-y: scroll;
       list-style: none;
       padding: 0;
       margin-left: 10px;
       margin-right: 10px; }
-      .frame .osa-list-wrapper .osa-list li {
+      .frame .osa-list-wrapper .osa-list li, .frame .booking-list-wrapper .osa-list li {
         margin-bottom: 10px;
         padding: 10px;
         background-color: #2F8F74;
         color: #E6E6E6;
         border-radius: 10px; }
-      .frame .osa-list-wrapper .osa-list li.active {
+      .frame .osa-list-wrapper .osa-list li.active, .frame .booking-list-wrapper .osa-list li.active {
         background-color: #58F9AB;
         color: #595959; }
+  .frame .booking-list-wrapper {
+    width: calc(10%);
+    padding-bottom: 20px;
+    height: auto; }
+    .frame .booking-list-wrapper .booking-item {
+      margin-top: 20px;
+      width: 80%;
+      height: auto;
+      background-color: #58F9AB;
+      border-radius: 50%; }
   .frame .osa-show-wrapper {
     float: right;
     width: calc(70% - 20px);

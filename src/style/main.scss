@@ -79,6 +79,22 @@ body {
         }
     }
 
+    .booking-list-wrapper {
+        @extend .osa-list-wrapper;
+        width: calc(10%);
+        padding-bottom: 20px;
+        height: auto;
+
+
+        .booking-item {
+            margin-top: 20px;
+            width: 80%;
+            height: auto;
+            background-color: #58F9AB;
+            border-radius: 50%;
+        }
+    }
+
     .osa-show-wrapper {
         float: right;
         width: calc(70% - 20px);

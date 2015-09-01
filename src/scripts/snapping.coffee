@@ -1,6 +1,6 @@
 createIcon = (name, href) ->
     paper = Snap "##{name}-icon"
-    Snap.load "/imgs/#{name}-icon.svg", (f) ->
+    Snap.load "/imgs/icons/#{name}-icon.svg", (f) ->
         icon = f.select '#icon'
 
         paper.append icon
