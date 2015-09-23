@@ -7,13 +7,13 @@ $layerTwoBrightness: $backgroundBrightness + 10%;
 $layerTwoShadow: $backgroundBrightness - 20%;
 
 html {
-	font-family: Montserrat, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .hidden {
@@ -28,7 +28,7 @@ body {
     background-color: hsl(0,0,$layerTwoBrightness);
     padding-top: 6vh;
     padding-bottom: 6vh;
-    
+
     .menu-btn {
         width: 22vh;
         height: 22vh;
@@ -122,7 +122,7 @@ body {
                 color: #212121;
                 text-align: center;
                 box-shadow: 2px 2px 5px 3px hsl(0,0,$layerOneShadow);
-                
+
                 p {
                     margin-bottom: 30px;
                     border-bottom: 2px solid;
@@ -167,100 +167,110 @@ body {
 }
 
 .link {
-	  fill: none;
-	  stroke: hsl(0,0,$layerTwoShadow);
-	  stroke-width: 2px;
+    fill: none;
+    stroke: hsl(0,0,$layerTwoShadow);
+    stroke-width: 2px;
 }
 
 
 .node text { font: 12px sans-serif; }
 
 .navbar {
-	background-image: url(/imgs/navbar-background.jpg);
-	background-size: 100% 100%;
-	width: 100%;
-	height: 16vh;
-	text-align: center;
+    background-image: url(/imgs/navbar-background.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 16vh;
+    text-align: center;
 
-	.nav-btn {
-		width: 14vh;
-		height: 14vh;
-		margin: 1vh;
-		margin-left: 5vw;
-		margin-right: 5vw;
+    .nav-btn {
+        width: 14vh;
+        height: 14vh;
+        margin: 1vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
 
         #icon {
             fill: #2F8F74;
-       }
-	}
+        }
+    }
 
 
-	.nav-btn.active, .nav-btn:hover {
-		#icon {
-			fill: #58F9AB;
-		}
-	}
+    .nav-btn.active, .nav-btn:hover {
+        #icon {
+            fill: #58F9AB;
+        }
+    }
 }
 
 .content {
-	background-color: hsl(0,0,$backgroundBrightness);
-	width: 100%;
-	height: calc(100% - 16vh);
-	box-shadow: 0px 0px 5px 5px hsl(0,0,40%);
-	text-align: center;
-	overflow-y: hidden;
+    background-color: hsl(0,0,$backgroundBrightness);
+    width: 100%;
+    height: calc(100% - 16vh);
+    box-shadow: 0px 0px 5px 5px hsl(0,0,40%);
+    text-align: center;
+    overflow-y: hidden;
 
-	.tile {
-		margin-top: 10px;
-		width: 40%;
-		margin-left: 2%;
-		margin-right: 2%;
-		display: inline-block;
+    .tile {
+        margin-top: 10px;
+        width: 40%;
+        margin-left: 2%;
+        margin-right: 2%;
+        display: inline-block;
 
-		.flashes {
-			width: 100%;
+        .flashes {
+            width: 100%;
 
-			.flash {
-				background-color: hsl(0,0,$layerTwoBrightness);
-				text-align: left;
-				padding: 2%;
-				padding-top: 1%;
-				padding-bottom: 1%;
-				width: 96%;
-				border-radius: 10px;
-				box-shadow: 0px 0px 4px hsl(0,0, $layerTwoShadow);
-				margin-bottom: 20px;
+            .flash {
+                background-color: hsl(0,0,$layerTwoBrightness);
+                text-align: left;
+                padding: 2%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                width: 96%;
+                border-radius: 10px;
+                box-shadow: 0px 0px 4px hsl(0,0, $layerTwoShadow);
+                margin-bottom: 20px;
 
-				.flash-header {
-					img {
-						width: 40px;
-						height: 40px;
-						border-radius: 50%;
-					}
+                .flash-header {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
 
-					h2 {
-						margin-left: 10px;
-						display: inline;
-						vertical-align: top;
-						line-height: 40px;
-					}
-				}
+                    h2 {
+                        margin-left: 10px;
+                        display: inline;
+                        vertical-align: top;
+                        line-height: 40px;
+                    }
+                }
 
-				.flash-read-more {
-					color: #3B5998;
-					text-decoration: underline;
-					cursor: pointer;
-				}
-			}
-		}
-	}
+                .flash-read-more {
+                    color: #3B5998;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 
-	.cluster-map {
-		width: 100%;
-		height: 100%;
-	}
+    .cluster-map {
+        width: 100%;
+        height: 100%;
+    }
 
-	.tile.intern {
-		vertical-align: top;
-	}
+    .tile.intern {
+        vertical-align: top;
+    }
+}
+
+.content.section {
+    #title {
+        margin: 2vw;
+        width: 46%;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: hsl(0,0,$layerTwoBrightness);
+    }
 }
