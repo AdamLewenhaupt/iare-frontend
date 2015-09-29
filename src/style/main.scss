@@ -6,8 +6,18 @@ $layerOneShadow: $backgroundBrightness - 10%;
 $layerTwoBrightness: $backgroundBrightness + 10%;
 $layerTwoShadow: $backgroundBrightness - 20%;
 
+$primaryColor: #2F8F74;
+$primaryHighlight: #58F9AB;
+$primaryFontColor: #1f271b;
+$primaryLinkColor: #FAA916;
+
 html {
     font-family: Montserrat, sans-serif;
+    color: $primaryFontColor;
+}
+
+a {
+    color: $primaryLinkColor;
 }
 
 body {
@@ -34,7 +44,7 @@ body {
         height: 22vh;
         margin: 2vh;
         font-size: 3vh; 
-        background-color: #2F8F74;
+        background-color: $primaryColor;
         color: #E6E6E6;
         cursor: pointer;
         border-radius: 50%;
@@ -67,13 +77,13 @@ body {
             li {
                 margin-bottom: 10px;
                 padding: 10px;
-                background-color: #2F8F74;
+                background-color: $primaryColor;
                 color: #E6E6E6;
                 border-radius: 10px;
             }
 
             li.active {
-                background-color: #58F9AB;
+                background-color: $primaryHighlight;
                 color: hsl(0,0, 35%);
             }
         }
@@ -90,7 +100,7 @@ body {
             margin-top: 20px;
             width: 80%;
             height: auto;
-            background-color: #58F9AB;
+            background-color: $primaryHighlight;
             border-radius: 50%;
         }
     }
@@ -116,7 +126,7 @@ body {
                 margin-top: 20px;
                 display: inline-block;
                 width: 200px;
-                background-color: #58F9AB;
+                background-color: $primaryHighlight;
                 padding: 20px;
                 border-radius: 20px;
                 color: #212121;
@@ -190,14 +200,14 @@ body {
         margin-right: 5vw;
 
         #icon {
-            fill: #2F8F74;
+            fill: $primaryColor;
         }
     }
 
 
     .nav-btn.active, .nav-btn:hover {
         #icon {
-            fill: #58F9AB;
+            fill: $primaryHighlight;
         }
     }
 }
@@ -217,40 +227,40 @@ body {
         margin-right: 2%;
         display: inline-block;
 
-        .flashes {
-            width: 100%;
+    }
+    .flashes {
+        width: 100%;
 
-            .flash {
-                background-color: hsl(0,0,$layerTwoBrightness);
-                text-align: left;
-                padding: 2%;
-                padding-top: 1%;
-                padding-bottom: 1%;
-                width: 96%;
-                border-radius: 10px;
-                box-shadow: 0px 0px 4px hsl(0,0, $layerTwoShadow);
-                margin-bottom: 20px;
+        .flash {
+            background-color: hsl(0,0,$layerTwoBrightness);
+            text-align: left;
+            padding: 2%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            width: 96%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px hsl(0,0, $layerTwoShadow);
+            margin-bottom: 20px;
 
-                .flash-header {
-                    img {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                    }
-
-                    h2 {
-                        margin-left: 10px;
-                        display: inline;
-                        vertical-align: top;
-                        line-height: 40px;
-                    }
+            .flash-header {
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
                 }
 
-                .flash-read-more {
-                    color: #3B5998;
-                    text-decoration: underline;
-                    cursor: pointer;
+                h2 {
+                    margin-left: 10px;
+                    display: inline;
+                    vertical-align: top;
+                    line-height: 40px;
                 }
+            }
+
+            .flash-read-more {
+                color: #3B5998;
+                text-decoration: underline;
+                cursor: pointer;
             }
         }
     }
@@ -268,9 +278,31 @@ body {
 .content.section {
     #title {
         margin: 2vw;
-        width: 46%;
+        width: 94%;
         border-radius: 10px;
         padding: 10px;
         background-color: hsl(0,0,$layerTwoBrightness);
+    }
+
+    .responsible {
+        width: 44%;
+        padding: 1vw;
+        margin: 2vw;
+        margin-top: 0vw;
+        float: left;
+        background-color: $primaryHighlight;
+        border-radius: 10px;
+        color: $primaryFontColor;
+
+        p {
+            border-bottom: 2px solid;
+            margin-bottom: 30px;
+        }
+    }
+
+    .feed {
+        width: 46%;
+        float: right;
+        margin: 2vw;
     }
 }

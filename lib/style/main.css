@@ -1,5 +1,9 @@
 html {
-  font-family: Montserrat, sans-serif; }
+  font-family: Montserrat, sans-serif;
+  color: #1f271b; }
+
+a {
+  color: #FAA916; }
 
 body {
   margin: 0;
@@ -153,31 +157,31 @@ body {
     margin-left: 2%;
     margin-right: 2%;
     display: inline-block; }
-    .content .tile .flashes {
-      width: 100%; }
-      .content .tile .flashes .flash {
-        background-color: #f2f2f2;
-        text-align: left;
-        padding: 2%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        width: 96%;
-        border-radius: 10px;
-        box-shadow: 0px 0px 4px #a6a6a6;
-        margin-bottom: 20px; }
-        .content .tile .flashes .flash .flash-header img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%; }
-        .content .tile .flashes .flash .flash-header h2 {
-          margin-left: 10px;
-          display: inline;
-          vertical-align: top;
-          line-height: 40px; }
-        .content .tile .flashes .flash .flash-read-more {
-          color: #3B5998;
-          text-decoration: underline;
-          cursor: pointer; }
+  .content .flashes {
+    width: 100%; }
+    .content .flashes .flash {
+      background-color: #f2f2f2;
+      text-align: left;
+      padding: 2%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 96%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 4px #a6a6a6;
+      margin-bottom: 20px; }
+      .content .flashes .flash .flash-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; }
+      .content .flashes .flash .flash-header h2 {
+        margin-left: 10px;
+        display: inline;
+        vertical-align: top;
+        line-height: 40px; }
+      .content .flashes .flash .flash-read-more {
+        color: #3B5998;
+        text-decoration: underline;
+        cursor: pointer; }
   .content .cluster-map {
     width: 100%;
     height: 100%; }
@@ -186,9 +190,25 @@ body {
 
 .content.section #title {
   margin: 2vw;
-  width: 46%;
+  width: 94%;
   border-radius: 10px;
   padding: 10px;
   background-color: #f2f2f2; }
+.content.section .responsible {
+  width: 44%;
+  padding: 1vw;
+  margin: 2vw;
+  margin-top: 0vw;
+  float: left;
+  background-color: #58F9AB;
+  border-radius: 10px;
+  color: #1f271b; }
+  .content.section .responsible p {
+    border-bottom: 2px solid;
+    margin-bottom: 30px; }
+.content.section .feed {
+  width: 46%;
+  float: right;
+  margin: 2vw; }
 
 /*# sourceMappingURL=main.css.map */
