@@ -276,23 +276,25 @@ body {
 }
 
 .content.section {
+
     #title {
-        margin: 2vw;
-        width: 94%;
+        margin: 1vw;
+        width: 96%;
         border-radius: 10px;
         padding: 10px;
         background-color: hsl(0,0,$layerTwoBrightness);
+        box-shadow: 0px 0px 2px hsl(0,0, $layerTwoShadow);
     }
 
     .responsible {
-        width: 44%;
+        width: 18%;
         padding: 1vw;
-        margin: 2vw;
-        margin-top: 0vw;
-        float: left;
+        margin: 1vw;
         background-color: $primaryHighlight;
         border-radius: 10px;
         color: $primaryFontColor;
+        display: inline-block;
+        vertical-align: top;
 
         p {
             border-bottom: 2px solid;
@@ -300,9 +302,20 @@ body {
         }
     }
 
+    .description {
+        padding: 1vw;
+        background-color: hsl(0, 0, $layerOneBrightness);
+        box-shadow: 0px 0px 2px hsl(0, 0, $layerOneShadow);
+        border-radius: 10px;
+        display: inline-block;
+        vertical-align: top;
+        width: 23%;
+    }
+
     .feed {
-        width: 46%;
-        float: right;
-        margin: 2vw;
+        width: 48%;
+        margin: 1vw;
+        display: inline-block;
+        vertical-align: top;
     }
 }
