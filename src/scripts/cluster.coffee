@@ -105,7 +105,7 @@ $ ->
             nodeEnter.append('circle').attr('r', bubbleWidth / 2).style 'fill', '#fff'
                 .style "fill", (d) -> if isCluster d then "none" else "url(#test)"
                 .style "stroke", (d) -> if isCluster d then "none"
-                .on "click", (d) -> alert(d.name)
+                .on "click", (d) -> window.location.href = "/sektion.html"
 
             nodeEnter.append('text').attr('y', (d) ->
                 if d.children or d._children then 0 else 0
