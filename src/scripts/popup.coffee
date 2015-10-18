@@ -23,11 +23,22 @@ internPopup = ->
 
     open()
 
+    text = $(".popup.popup-intern").attr('data-intern')
+    if text
+        options = $.parseJSON text
+    else
+        options = {}
+
     $.ajax
         cache: false
         url: "/editor-intern.html"
         success: (content) ->
             $(content).appendTo $(".popup.popup-wrapper")
+
+            if options.board != undefined
+                $(".popup.popup-wrapper select[name=board]").parent().remove()
+                $("<input name='board' type='hidden' value='#{options.board}' />").appendTo $(".popup.popup-wrapper form")
+
             $(".popup.popup-finish").click ->
                 console.log $(".popup.editor > form").serialize()
                 close()

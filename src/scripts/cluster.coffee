@@ -78,16 +78,16 @@ $ ->
 
                 else if d.parent != undefined and d.parent.isSmall
                     d.x = d.parent.x + bubbleWidth
-                    y = d.parent.y + 50
+                    y = d.parent.y + 55
 
                 else if d.children == undefined
 
                     if d.parent.children.length < 6
                         d.x = d.parent.x + bubbleWidth
-                        y = y - 50 + j * 80
+                        y = y - 80 + j * 80
                     else
                         d.x = d.parent.x + (if j % 2 == 0 then -200 else bubbleWidth)
-                        y = y - 50 + (j / 2) * 80
+                        y = y - 80 + Math.ceil(j / 2) * 80
 
                 maxHeight = if y > maxHeight then y else maxHeight
                 d.y = y

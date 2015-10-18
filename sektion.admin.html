@@ -26,9 +26,19 @@
                 <p>
                     Någon form av beskrivning över denna fina nämnd.<br/><br/>Den kan vara lite hur lång man kännar den ska vara
                 </p>
+                <div class="btn btn-primary">Edit</div>
                 </div>
             <div class="feed">
+                <div class="add popup popup-intern"
+                    data-intern='{ "board": "test" }'>
+                    +
+                </div>
+                <div></div>
                 <div class="flashes">
+                    <div class="flash-admin">
+                        <div class="btn btn-primary">Edit</div>
+                        <div class="btn btn-warning">Ta bort</div>
+                    </div>
                     <div class="flash">
                         <div class="flash-header">
                             <img src="/imgs/mck-logo.jpg" alt="McKinsey">
@@ -45,6 +55,7 @@
         <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="snap.svg.js"></script>
         <script type="text/javascript" src="lib/js/snapping.js"></script>
+        <script src="lib/js/popup.js" type="text/javascript"></script>
         <script type="text/javascript" src="lib/js/sektion.js"></script>
     </body>
 </html>
