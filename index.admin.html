@@ -4,6 +4,7 @@
 	<title>Industriell ekonomi - intranät</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="lib/style/main.css">
 </head>
 <body>
@@ -13,14 +14,18 @@
 		<svg class="nav-btn" id="cal-icon" viewBox="-130 -130 750 750"></svg>
 	</div>
 	<div class="content">
-		<div class="tile business">
             <div class="add popup popup-select" 
                 data-options='[{"text": "Nämnd", "type": "intern"},{ "text": "Företag", "type": "extern" }]'
                 >+</div>
-                <h1>Nytt</h1>
+		<div class="tile business">
+                <h1>Nytt från företag</h1>
             </h1>
 			<div class="flashes">
 				<!-- Mckinsey-teaser -->
+                <div class="flash-admin">
+                    <div class="btn btn-primary">Edit</div>
+                    <div class="btn btn-warning">Remove</div>
+                </div>
 				<div class="flash">
 					<div class="flash-header">
 						<img src="/imgs/mck-logo.jpg" alt="logo" /><h2>McKinsey söker konsulter</h2>
@@ -31,6 +36,10 @@
 					</div>
 				</div>
 				<!-- BCG-teaser -->
+                <div class="flash-admin">
+                    <div class="btn btn-primary">Edit</div>
+                    <div class="btn btn-warning">Remove</div>
+                </div>
 				<div class="flash">
 					<div class="flash-header">
 						<img src="/imgs/bcg-logo.png" alt="logo" /><h2>Det gör BCG också..</h2>
@@ -49,6 +58,9 @@
 	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="snap.svg.js"></script>
 	<script type="text/javascript" src="lib/js/snapping.js"></script>
+    <script src="/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.min.js" type="text/javascript"></script>
+    <script src="/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
     <script src="lib/js/popup.js" type="text/javascript"></script>
+    <script src="lib/js/index.js" type="text/javascript"></script>
 </body>
 </html>

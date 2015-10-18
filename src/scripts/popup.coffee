@@ -39,7 +39,7 @@ internPopup = ->
 selectPopup = ->
     text = $(".popup.popup-select").attr("data-options")
     options = $.parseJSON(text)
-    options.push { text: "Exit", type: "exit" }
+    options.push { text: "Avbryt", type: "exit" }
     open(false)
 
     $wrapper = $("<div>").addClass "popup popup-select"
