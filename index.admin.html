@@ -3,17 +3,20 @@
 	<meta charset="utf-8">
 	<title>Industriell ekonomi - intranät</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="lib/style/main.css">
 </head>
 <body>
-	<div class="navbar">
+	<div class="navigation">
 		<svg class="nav-btn active" id="iare-icon" viewBox="0 0 1786 2033"></svg>
 		<svg class="nav-btn" id="cluster-icon" viewBox="-7 -7 60 60"></svg>
 		<svg class="nav-btn" id="cal-icon" viewBox="-130 -130 750 750"></svg>
 	</div>
 	<div class="content">
 		<div class="tile business">
-                <div class="add">+</div>
+            <div class="add popup popup-select" 
+                data-options='[{"text": "Nämnd", "type": "intern"},{ "text": "Företag", "type": "extern" }]'
+                >+</div>
                 <h1>Nytt</h1>
             </h1>
 			<div class="flashes">
@@ -46,5 +49,6 @@
 	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="snap.svg.js"></script>
 	<script type="text/javascript" src="lib/js/snapping.js"></script>
+    <script src="lib/js/popup.js" type="text/javascript"></script>
 </body>
 </html>
