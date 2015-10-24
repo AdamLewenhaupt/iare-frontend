@@ -255,6 +255,23 @@ body {
   display: inline-block;
   vertical-align: top; }
 
+.content.admin .search-bar {
+  margin-bottom: 10px; }
+.content.admin table.users {
+  width: 100%;
+  text-align: center;
+  font-color: #1f271b; }
+  .content.admin table.users tr {
+    width: 100%;
+    border: 1px solid #2F8F74; }
+    .content.admin table.users tr td {
+      padding: 15px;
+      border: 1px dashed #58F9AB; }
+  .content.admin table.users tr:nth-child(even) {
+    background-color: #e6e6e6; }
+  .content.admin table.users tr:nth-child(odd) {
+    background-color: #f2f2f2; }
+
 .popup.popup-wrapper {
   position: fixed;
   left: 20%;

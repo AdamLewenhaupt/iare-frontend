@@ -368,6 +368,40 @@ body {
     }
 }
 
+.content.admin {
+    .search-bar {
+        margin-bottom: 10px;
+    }
+
+    table.users {
+        width: 100%;
+        text-align: center;
+        font-color: $primaryFontColor;
+
+        tr {
+            width: 100%;
+            border: 1px solid $primaryColor;
+
+            td {
+                padding: 15px;
+                border: 1px dashed $primaryHighlight;
+            }
+        }
+
+        tr:nth-child(even) {
+            background-color: hsl(0,0, $layerOneBrightness);
+        }
+
+        tr:nth-child(odd) {
+            background-color: hsl(0,0, $layerTwoBrightness);
+        }
+
+        .header {
+            
+        }
+    }
+}
+
 .popup.popup-wrapper {
     position: fixed;
     left: 20%;
